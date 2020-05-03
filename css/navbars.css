@@ -1,0 +1,71 @@
+:root {
+  --underline-height: 0.5em;
+  --transition-duration: 0.5s;
+}
+
+
+
+nav {
+  position: relative;
+  white-space: nowrap;
+  background: white;
+  padding: var(--underline-height) 0;
+  margin: 0.1cm;
+  box-shadow: 0 1em 2em rgba(0, 0, 0, 0.05);
+}
+
+.underline {
+  display: block;
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  left: 0;
+  height: var(--underline-height);
+  width: 20%;
+  background: black;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  -webkit-transition: -webkit-transform var(--transition-duration) ease-in-out;
+  transition: -webkit-transform var(--transition-duration) ease-in-out;
+  transition: transform var(--transition-duration) ease-in-out;
+  transition: transform var(--transition-duration) ease-in-out, -webkit-transform var(--transition-duration) ease-in-out;
+}
+.underline:nth-child(1) {
+  background: yellow;
+  -webkit-transition: calc(var(--transition-duration) * 0.8);
+  transition: calc(var(--transition-duration) * 0.8);
+}
+.underline:nth-child(2) {
+  background: cyan;
+  -webkit-transition: calc(var(--transition-duration) * 1.2);
+  transition: calc(var(--transition-duration) * 1.2);
+}
+.underline:nth-child(3) {
+  background: magenta;
+}
+
+a {
+  display: inline-block;
+  z-index: 10;
+  width: 20%;
+  font-weight: 700;
+  font-size: 0.6cm;
+  padding: 1em 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+nav.full {
+  font-weight: bold;
+  background: rgb(36, 35, 35);
+  color: white;
+}
+nav.full .underline {
+  height: 100%;
+  background: gold;
+}
+
+.kaitan{
+  margin-top: 20px;
+}
